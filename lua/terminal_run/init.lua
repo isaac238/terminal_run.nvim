@@ -1,4 +1,4 @@
-json = require "test.json"
+json = require "terminal_run.json"
 
 local M = {}
 local commands = {}
