@@ -1,9 +1,6 @@
-json = require "terminal_run.json"
-
+fileio = require("terminal_run.io")
 local M = {}
 local commands = {}
-local fileName = "terminal_run_command_storage.json"
-local path = vim.fn.stdpath('cache').."/"..fileName
 
 
 -- Creating Commands for the Plugin
@@ -15,42 +12,14 @@ vim.api.nvim_create_user_command('SetRunCommand', function(opts)
 	M.setRunCommand(opts.args)
 end, { nargs = 1 })
 
-
-
--- File handling JSON
-M.createCacheFileIfNotExists = function()
-	local file = io.open(path, "a")
-	io.close(file)
-end
-
-M.updateFile = function()
-	local file = io.open(path, "w")
-	if file then
-		file:write(json.encode(commands))
-		file:close()
-	end
-end
-
-M.getCommands = function()
-	local file = io.open(path, "r")
-	if file then
-		local contents = file:read("*all")
-		if contents ~= "" then
-			commands = json.decode(contents)
-		end
-		file:close()
-	end
-end
-
-
 -- Command Methods
 M.setRunCommand = function(command)
 	local cwd = vim.fn.getcwd()
-	M.createCacheFileIfNotExists()
-	M.getCommands()
+	fileio.create()
+	commands = fileio.readTable()
 	commands[cwd] = command
-	M.updateFile()
-	M.getCommands()
+	fileio.writeTable(commands)
+	commands = fileio.readTable()
 	if commands[cwd] == command then
 		print("Run set to: "..command)
 	else
@@ -59,7 +28,7 @@ M.setRunCommand = function(command)
 end
 
 M.runTerminal = function()
-	M.getCommands()
+	commands = fileio.readTable()
 	local command = commands[vim.fn.getcwd()]
 
 	if command ~= nil then
