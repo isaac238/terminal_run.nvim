@@ -33,11 +33,9 @@ end
 
 M.getCommands = function()
 	local file = io.open(path, "r")
-	print("Get Commands")
 	if file then
 		local contents = file:read("*all")
 		if contents ~= "" then
-			print(contents)
 			commands = json.decode(contents)
 		end
 		file:close()
@@ -53,11 +51,11 @@ M.setRunCommand = function(command)
 	commands[cwd] = command
 	M.updateFile()
 	M.getCommands()
+	print("Run set to: "..command)
 end
 
 M.runTerminal = function()
 	M.getCommands()
-	print(json.encode(commands))
 	local command = commands[vim.fn.getcwd()]
 	vim.cmd("term "..command)
 end
