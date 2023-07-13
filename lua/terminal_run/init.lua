@@ -51,13 +51,22 @@ M.setRunCommand = function(command)
 	commands[cwd] = command
 	M.updateFile()
 	M.getCommands()
-	print("Run set to: "..command)
+	if commands[cwd] == command then
+		print("Run set to: "..command)
+	else
+		print("Something went wrong, please try again!")
+	end
 end
 
 M.runTerminal = function()
 	M.getCommands()
 	local command = commands[vim.fn.getcwd()]
-	vim.cmd("term "..command)
+
+	if command ~= nil then
+		vim.cmd("term "..command)
+	else
+		print("Execute SetRunCommand <command> to set a command")
+	end
 end
 
 return M
