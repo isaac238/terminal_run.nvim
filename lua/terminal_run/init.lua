@@ -2,7 +2,7 @@ json = require "terminal_run.json"
 
 local M = {}
 local commands = {}
-local fileName = "testPluginCommandStorage.json"
+local fileName = "terminal_run_command_storage.json"
 local path = vim.fn.stdpath('cache').."/"..fileName
 
 
