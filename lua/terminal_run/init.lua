@@ -2,6 +2,7 @@
 --- *TerminalRun*
 ---
 --- MIT License Copyright (c) 2023 Isaac Sutherland
+--- Find out more: *https://github.com/isaac238/terminal_run.nvim*
 ---
 --- ==============================================================================
 ---
