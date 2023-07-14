@@ -3,7 +3,7 @@ local M = {}
 local commands = {}
 
 
--- Creating Commands for the Plugin
+-- Defining commands with neovim
 vim.api.nvim_create_user_command('Run', function()
 	M.runTerminal()
 end, {})
