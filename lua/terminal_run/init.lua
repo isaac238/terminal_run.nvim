@@ -1,3 +1,23 @@
+--- *terminal_run* Set execute commands for each project
+--- *TerminalRun*
+---
+--- MIT License Copyright (c) 2023 Isaac Sutherland
+---
+--- ======================================================================
+---
+--- Features
+--- - Set a command for each directory you access nvim from (Project)
+--- - Run the set command through a terminal buffer (:term)
+---
+--- Commands:
+--- *:SetRunCommand <command>*
+--- Sets the command for the current project to <command>
+---
+--- *:Run*
+--- Runs the command set by *:SetRunCommand* in a terminal buffer (:term)
+---
+--- ======================================================================
+
 fileio = require("terminal_run.io")
 local M = {}
 local commands = {}

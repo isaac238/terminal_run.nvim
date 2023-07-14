@@ -1,19 +1,38 @@
-========================================TERMINAL-RUN========================================
-Terminal run is a plugin for quickly assigning a run command to your project, e.g.:
+==============================================================================
+------------------------------------------------------------------------------
+*terminal_run* Set execute commands for each project
+*TerminalRun*
 
-`python3 -m http.server 8000`
-`npm run dev`
+MIT License Copyright (c) 2023 Isaac Sutherland
 
-This reduces wasted time that happens when switching between programs like nvim and tmux
+======================================================================
 
-repo: https://github.com/isaac238/terminal_run.nvim
+Features
+- Set a command for each directory you access nvim from (Project)
+- Run the set command through a terminal buffer (:term)
 
-:h SetRunCommand
+Commands:
+*:SetRunCommand <command>*
+Sets the command for the current project to <command>
 
-:SetRunCommand <command>
-Sets the command for project (based on root directory) to <command>.
+*:Run*
+Runs the command set by *:SetRunCommand* in a terminal buffer (:term)
 
-:h Run
-:Run
-Opens a new terminal buffer with the projects command in it.
-========================================TERMINAL-RUN========================================
+======================================================================
+
+
+==============================================================================
+------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------
+
+
+
+ vim:tw=78:ts=8:noet:ft=help:norl:
