@@ -3,7 +3,7 @@
 ---
 --- MIT License Copyright (c) 2023 Isaac Sutherland
 ---
---- ======================================================================
+--- ==============================================================================
 ---
 --- Features
 --- - Set a command for each directory you access nvim from (Project)
@@ -16,7 +16,6 @@
 --- *:Run*
 --- Runs the command set by *:SetRunCommand* in a terminal buffer (:term)
 ---
---- ======================================================================
 
 fileio = require("terminal_run.io")
 local M = {}
