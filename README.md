@@ -3,12 +3,12 @@ A plugin for running projects quickly through neovim itself rather than programs
 ## Contents
 - 3rd party modules
   - [JSON](https://github.com/rxi/json.lua/blob/master/json.lua)
-- [Installation](Installation)
-  - [Packer](Packer)
-  - [Plug](Plug)
-- [Commands](Commands)
-  - [SetRunCommand](SetRunCommand)
-  - [Run](Run)
+- [Installation](#Installation)
+  - [Packer](#Packer)
+  - [Plug](#Plug)
+- [Commands](#Commands)
+  - [SetRunCommand](#SetRunCommand)
+  - [Run](#Run)
 
 ## Installation
 ### Packer
